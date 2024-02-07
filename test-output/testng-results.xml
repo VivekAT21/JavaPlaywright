@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-02-06T22:00:03 IST" name="Practice Suite" finished-at="2024-02-06T22:03:26 IST" duration-ms="202688">
+    <groups>
+    </groups>
+    <test started-at="2024-02-06T22:00:03 IST" name="Landing Page" finished-at="2024-02-06T22:03:16 IST" duration-ms="192496">
+      <class name="pwj.qa.ecomm.tests.LandingPageTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:pwj.qa.ecomm.tests.LandingPageTest@11f0a5a1]" started-at="2024-02-06T22:00:03 IST" name="setup" finished-at="2024-02-06T22:03:07 IST" duration-ms="183993" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verify_landingpageTitle()[pri:0, instance:pwj.qa.ecomm.tests.LandingPageTest@11f0a5a1]" started-at="2024-02-06T22:03:07 IST" name="verify_landingpageTitle" finished-at="2024-02-06T22:03:08 IST" duration-ms="232" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_landingpageTitle -->
+        <test-method signature="verify_productName()[pri:0, instance:pwj.qa.ecomm.tests.LandingPageTest@11f0a5a1]" started-at="2024-02-06T22:03:10 IST" name="verify_productName" finished-at="2024-02-06T22:03:10 IST" duration-ms="156" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_productName -->
+        <test-method signature="verify_url()[pri:0, instance:pwj.qa.ecomm.tests.LandingPageTest@11f0a5a1]" started-at="2024-02-06T22:03:11 IST" name="verify_url" finished-at="2024-02-06T22:03:11 IST" duration-ms="18" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_url -->
+        <test-method is-config="true" signature="TearDown()[pri:0, instance:pwj.qa.ecomm.tests.LandingPageTest@11f0a5a1]" started-at="2024-02-06T22:03:13 IST" name="TearDown" finished-at="2024-02-06T22:03:16 IST" duration-ms="2960" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TearDown -->
+      </class> <!-- pwj.qa.ecomm.tests.LandingPageTest -->
+    </test> <!-- Landing Page -->
+    <test started-at="2024-02-06T22:00:03 IST" name="Search Page" finished-at="2024-02-06T22:03:24 IST" duration-ms="200641">
+      <class name="pwj.qa.ecomm.tests.SearchPageTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:pwj.qa.ecomm.tests.SearchPageTest@41294f8]" started-at="2024-02-06T22:00:03 IST" name="setup" finished-at="2024-02-06T22:03:12 IST" duration-ms="188769" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verify_searchedProduct()[pri:0, instance:pwj.qa.ecomm.tests.SearchPageTest@41294f8]" started-at="2024-02-06T22:03:12 IST" name="verify_searchedProduct" finished-at="2024-02-06T22:03:22 IST" duration-ms="9547" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_searchedProduct -->
+        <test-method signature="verify_searchedProduct01()[pri:0, instance:pwj.qa.ecomm.tests.SearchPageTest@41294f8]" started-at="2024-02-06T22:03:22 IST" name="verify_searchedProduct01" finished-at="2024-02-06T22:03:23 IST" duration-ms="726" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_searchedProduct01 -->
+        <test-method is-config="true" signature="TearDown()[pri:0, instance:pwj.qa.ecomm.tests.SearchPageTest@41294f8]" started-at="2024-02-06T22:03:23 IST" name="TearDown" finished-at="2024-02-06T22:03:24 IST" duration-ms="1082" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TearDown -->
+      </class> <!-- pwj.qa.ecomm.tests.SearchPageTest -->
+    </test> <!-- Search Page -->
+    <test started-at="2024-02-06T22:00:03 IST" name="MyAccount Page" finished-at="2024-02-06T22:03:26 IST" duration-ms="202688">
+      <class name="pwj.qa.ecomm.tests.MyAccountPageTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:pwj.qa.ecomm.tests.MyAccountPageTest@38ba6ce3]" started-at="2024-02-06T22:00:03 IST" name="setup" finished-at="2024-02-06T22:03:12 IST" duration-ms="188778" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verify_loginisSuccessfully()[pri:0, instance:pwj.qa.ecomm.tests.MyAccountPageTest@38ba6ce3]" started-at="2024-02-06T22:03:12 IST" name="verify_loginisSuccessfully" finished-at="2024-02-06T22:03:25 IST" duration-ms="13024" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_loginisSuccessfully -->
+        <test-method is-config="true" signature="TearDown()[pri:0, instance:pwj.qa.ecomm.tests.MyAccountPageTest@38ba6ce3]" started-at="2024-02-06T22:03:25 IST" name="TearDown" finished-at="2024-02-06T22:03:26 IST" duration-ms="761" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TearDown -->
+      </class> <!-- pwj.qa.ecomm.tests.MyAccountPageTest -->
+    </test> <!-- MyAccount Page -->
+  </suite> <!-- Practice Suite -->
+</testng-results>
