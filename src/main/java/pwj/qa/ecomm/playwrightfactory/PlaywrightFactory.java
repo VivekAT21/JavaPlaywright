@@ -1,13 +1,17 @@
 package pwj.qa.ecomm.playwrightfactory;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Base64;
 import java.util.Properties;
 
 import com.microsoft.playwright.Browser;
+import com.microsoft.playwright.Browser.NewContextOptions;
 import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.BrowserType.LaunchOptions;
@@ -46,6 +50,9 @@ public class PlaywrightFactory {
 	public Page initBrowser(Properties prop ) {
 		System.out.println("Execution started.......");
 		
+		ArrayList<String> winMax = new ArrayList<>();
+		winMax.add("--start-maximized");
+		 
 		String browserName = prop.getProperty("browser").trim();
 		tlPlaywright.set(Playwright.create());
 		
@@ -60,13 +67,14 @@ public class PlaywrightFactory {
 			tlBrowser.set(getPlayWright().webkit().launch(new BrowserType.LaunchOptions().setHeadless(false)));
 			break;
 		case "chrome":
-			tlBrowser.set(getPlayWright().chromium().launch(new LaunchOptions().setChannel("chrome").setHeadless(false)));
+			tlBrowser.set(getPlayWright().chromium().launch(new LaunchOptions().setChannel("chrome").setHeadless(false).setArgs(winMax)));
+			//maxmizing only chrome browser for now by passing setArgs
 			break;
 		default:
 			System.out.println("ENTER CORRECT BROWSER NAME.....");
 			break;
 		}
-		tlBrowserContext.set(getBrowser().newContext());
+		tlBrowserContext.set(getBrowser().newContext(new NewContextOptions().setViewportSize(null)));
 		tlPage.set(getBrowserContext().newPage());
 		
 		getPage().navigate(prop.getProperty("url").trim());
