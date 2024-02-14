@@ -10,6 +10,7 @@ import com.microsoft.playwright.Page;
 import pwj.qa.ecomm.pages.LandingPage;
 import pwj.qa.ecomm.pages.LoginPage;
 import pwj.qa.ecomm.pages.MyAccountPage;
+import pwj.qa.ecomm.pages.ProductDetailPage;
 import pwj.qa.ecomm.pages.SearchPage;
 import pwj.qa.ecomm.playwrightfactory.PlaywrightFactory;
 
@@ -22,6 +23,7 @@ public class BaseTest {
 	protected SearchPage searchpage;
 	protected LoginPage loginpage;
 	protected MyAccountPage myaccountpage;
+	protected ProductDetailPage productdetailpage;
 	
 	
 	@BeforeTest

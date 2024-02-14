@@ -1,15 +1,22 @@
 package pwj.qa.ecomm.pages;
 
+import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
+
+import pwj.qa.ecomm.playwrightfactory.PlaywrightFactory;
 
 public class LandingPage {
 	
 	private Page page;
+	private PlaywrightFactory pf;
 	
 	private String loc_searchTxtBx = "//input[@placeholder='Search']";
 	private String loc_searchTxtBtn = "//button[@class='btn btn-default btn-lg']";
 	private String loc_myacntLink = "//a[@title='My Account']";
 	private String loc_loginLink = "//a[normalize-space()='Login']";
+	private String loc_prodBx = "//div[@class='product-thumb transition']";
+	private String loc_addtocartIcon = loc_prodBx + "//span[contains(text(),'Add to Cart')]";
+	private String loc_addtowishlistIcon = loc_prodBx + "//span[contains(text(),'Add to Wish List')]";
 	
 	private String loc_proddetailTxt(String prodName) {
 		String proddetailTxt = "//a[contains(text(),'" 
@@ -60,4 +67,22 @@ public class LandingPage {
 		page.hover(loc_prodaddtocartIcon(prodName));
 	}
 
+	public int getProdCnt() {
+		Locator prodCnt = page.locator(loc_prodBx);
+		return prodCnt.count();
+	}
+	
+	//this is for test only, because clicking on 3rd and 4th will redirect to next page
+	public void addAllProdtoCart() {
+		int prodBox = getProdCnt();
+		for (int i=0; i< prodBox; i++) {
+			page.click(loc_addtocartIcon);
+		}
+	}
+	
+	public ProductDetailPage clickon3rdProdBox() {
+		page.locator(loc_addtocartIcon).nth(2).click();
+		return new ProductDetailPage(page);
+	}
+	
 }

@@ -11,8 +11,7 @@ public class SearchPage {
 		String loc = "//a[normalize-space()='"+ productName +"']";
 		return loc;
 	}
-	
-	
+		
 	public SearchPage(Page page) {
 		this.page = page;
 	}

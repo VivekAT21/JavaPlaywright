@@ -1,4 +1,4 @@
-package pwj.qa.ecomm.constants;
+	package pwj.qa.ecomm.constants;
 
 public class AppConstants {
 

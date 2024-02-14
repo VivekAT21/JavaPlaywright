@@ -70,6 +70,11 @@ public class PlaywrightFactory {
 			tlBrowser.set(getPlayWright().chromium().launch(new LaunchOptions().setChannel("chrome").setHeadless(false).setArgs(winMax)));
 			//maxmizing only chrome browser for now by passing setArgs
 			break;
+		case "edge":
+			tlBrowser.set(getPlayWright().chromium().launch(new LaunchOptions().setChannel("msedge").setHeadless(false).setArgs(winMax)));
+			tlBrowserContext.set(getBrowser().newContext(new NewContextOptions().setViewportSize(null)));
+			//maxmizing only edge browser for now by passing setArgs
+			break;
 		default:
 			System.out.println("ENTER CORRECT BROWSER NAME.....");
 			break;
@@ -82,7 +87,6 @@ public class PlaywrightFactory {
 		return getPage();
 	}
 
-	
 	public Properties init_prop() {
 	try {
 		FileInputStream ip = new FileInputStream("./resources/config/config.properties");
@@ -107,6 +111,21 @@ public class PlaywrightFactory {
 		
 		return base64Path;
 	}
+	
+	
+	public void jsDialogAccept() {
+		page.onDialog(dialog ->{
+			dialog.accept();
+		});
+	}
+	
+	public Page newTab(String loc, int index) {
+		Page popup = page.waitForPopup(() -> {
+				page.locator(loc).nth(index).click();
+				});
+		return popup;
+	}
+	
 	
 	/**
 	 * 	
