@@ -18,6 +18,7 @@ public class LandingPage {
 	private String loc_addtocartIcon = loc_prodBx + "//span[contains(text(),'Add to Cart')]";
 	private String loc_addtowishlistIcon = loc_prodBx + "//span[contains(text(),'Add to Wish List')]";
 	
+	
 	private String loc_proddetailTxt(String prodName) {
 		String proddetailTxt = "//a[contains(text(),'" 
 				+ prodName 
@@ -34,7 +35,7 @@ public class LandingPage {
 		String prodAddtoCartIcon = loc_proddetailTxt(prodName) + "/following-sibling::div[@class='button-group']";
 		return prodAddtoCartIcon;
 	}
-		
+	
 	public LandingPage (Page page) {
 		this.page = page;
 	}
