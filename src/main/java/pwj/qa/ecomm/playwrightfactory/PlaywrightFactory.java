@@ -15,6 +15,7 @@ import com.microsoft.playwright.Browser.NewContextOptions;
 import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.BrowserType.LaunchOptions;
+import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 
@@ -126,6 +127,33 @@ public class PlaywrightFactory {
 		return popup;
 	}
 	
+	/* xslidedst, distance to slide x axis in px  (yaxis will be zero if we have slider only)
+	 * yslidedst, distance to slide y axis in px  (when we have resizable element)
+	 * */
+	public void slider(String locator, int xslidedst, int yslidedst) {
+				
+		Locator slider = page.locator(locator);
+		page.mouse().move(slider.boundingBox().x + slider.boundingBox().width/2, slider.boundingBox().y+slider.boundingBox().height/2);
+		page.mouse().down();
+		page.mouse().move(slider.boundingBox().x + xslidedst, slider.boundingBox().y + yslidedst);
+		page.mouse().up();
+	}
+	
+	/* elementtoDrag, select center of the element to be dragged)
+	 * elementinDrop, drop in the center of the element)
+	 * */
+	public void dragndrop(String dragable, String dropable) {
+				
+		Locator elementtoDrag = page.locator(dragable);
+		Locator elementinDrop = page.locator(dropable);
+		
+		page.mouse().move(elementtoDrag.boundingBox().x + elementtoDrag.boundingBox().width/2, 
+				elementinDrop.boundingBox().y + elementinDrop.boundingBox().height/2);
+		page.mouse().down();
+		page.mouse().move(elementtoDrag.boundingBox().x + elementtoDrag.boundingBox().width/2, 
+				elementinDrop.boundingBox().y + elementinDrop.boundingBox().height/2);
+		page.mouse().up();
+	}
 	
 	/**
 	 * 	

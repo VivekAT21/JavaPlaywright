@@ -18,7 +18,7 @@ public class SearchPageTest extends BaseTest {
 	
 	@Test
 	public void verify_searchedProduct01() {
-		searchpage = landingpage.doSearch(AppConstants.SEARCH_PROD_NAME);
+//		searchpage = landingpage.doSearch(AppConstants.SEARCH_PROD_NAME);
 		assertEquals(searchpage.getSearchedText01(AppConstants.SEARCHED_PROD_NAME), AppConstants.SEARCHED_PROD_NAME);
 		
 	}
