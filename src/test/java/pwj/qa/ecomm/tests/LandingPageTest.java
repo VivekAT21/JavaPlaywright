@@ -12,8 +12,7 @@ public class LandingPageTest extends BaseTest {
 	
 	@Test
 	public void verify_landingpageTitle() {
-		assertEquals(landingpage.getLandingPageTitle(), AppConstants.LANDING_PAGE_TITLE);
-		
+		assertEquals(landingpage.getLandingPageTitle(), AppConstants.LANDING_PAGE_TITLE);	
 	}
 	
 	@Test
@@ -24,9 +23,6 @@ public class LandingPageTest extends BaseTest {
 	@Test
 	public void verify_productName() {
 		assertEquals(landingpage.getProdName(AppConstants.ADD_TO_CART_PROD), AppConstants.ADD_TO_CART_PROD);
-	}
-	
-	
-	
+	}	
 
 }

@@ -11,7 +11,7 @@ import pwj.qa.ecomm.constants.AppConstants;
 public class ProductDetailPageTest extends BaseTest {
 	
 	@BeforeTest
-	public void createInstance() {
+	public void createpdInstance() {
 		productdetailpage = landingpage.clickon3rdProdBox();
 	}
 	
