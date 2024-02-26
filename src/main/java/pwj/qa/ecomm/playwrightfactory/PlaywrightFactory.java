@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Base64;
 import java.util.Properties;
 
@@ -65,11 +66,12 @@ public class PlaywrightFactory {
 			tlBrowser.set(getPlayWright().firefox().launch(new BrowserType.LaunchOptions().setHeadless(false)));
 			break;
 		case "safari":
-			tlBrowser.set(getPlayWright().webkit().launch(new BrowserType.LaunchOptions().setHeadless(false)));
+			tlBrowser.set(getPlayWright().webkit().launch(new BrowserType.LaunchOptions().setHeadless(false).setArgs(winMax)));
+			tlBrowserContext.set(getBrowser().newContext(new NewContextOptions().setViewportSize(null)));
 			break;
 		case "chrome":
 			tlBrowser.set(getPlayWright().chromium().launch(new LaunchOptions().setChannel("chrome").setHeadless(false).setArgs(winMax)));
-			//maxmizing only chrome browser for now by passing setArgs
+			tlBrowserContext.set(getBrowser().newContext(new NewContextOptions().setViewportSize(null)));
 			break;
 		case "edge":
 			tlBrowser.set(getPlayWright().chromium().launch(new LaunchOptions().setChannel("msedge").setHeadless(false).setArgs(winMax)));
